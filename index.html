@@ -1,19 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Best tap waters in Ireland</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AR Creature</title>
+  <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/jeromeetienne/ar.js/aframe/build/aframe-ar.min.js"></script>
 </head>
-<body>
-    <h1 id="title">Tap Water Selection</h1>
-    <h1>Another h1</h1>
-    <h4>Where your tap water dreams come true</h4>
-    <p>This website will select the best tap waters in Ireland. You will be able to learn more about the water taste and visual aspects according to each county and some specific restaurants.</p>
-    <img id="water" src="https://live.staticflickr.com/65535/51486530327_762084a772_6k.jpg" alt="Image of a hand holding a glass under a tap running water">
-    <br>
-    <button onclick="changeImage()">Click here to change the image</button>
-    <script src="script.js"></script>
+<body style="margin: 0; overflow: hidden;">
+
+  <!-- AR Scene -->
+  <a-scene embedded arjs>
+    <!-- Add a 3D creature -->
+    <a-entity 
+      gltf-model="assets/creature.glb" 
+      position="0 0 -2" 
+      scale="0.5 0.5 0.5">
+    </a-entity>
+
+    <!-- Ground plane for anchoring -->
+    <a-plane 
+      position="0 0 -2" 
+      rotation="-90 0 0" 
+      width="10" 
+      height="10" 
+      color="#cccccc">
+    </a-plane>
+
+    <!-- Add light for 3D model -->
+    <a-light type="directional" position="1 1 0"></a-light>
+    <a-light type="ambient" color="#ffffff"></a-light>
+  </a-scene>
+
 </body>
 </html>
